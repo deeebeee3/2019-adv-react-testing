@@ -20,8 +20,6 @@ it('has a text area and a buttton', () => {
   expect(wrapped.find('button').length).toEqual(1);
 });
 
-
-
 describe('the text area', () => {
 
   //this beforeEach will only apply to the tests inside this describe block
