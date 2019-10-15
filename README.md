@@ -79,3 +79,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 - shallow rendering (render just the given react component and none of it's children (will render other non-react HTML))
 - Full DOM rendering (render the component and all of it's children + let us modify it afterwards)
 
+4. https://facebook.github.io/create-react-app/docs/importing-a-component#absolute-imports
