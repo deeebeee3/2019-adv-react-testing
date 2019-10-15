@@ -13,9 +13,20 @@ beforeEach(() => {
 afterEach(() => {
   //remove component from fake DOM
   wrapped.unmount();
-})
+});
 
 it('has a text area and a buttton', () => {
   expect(wrapped.find('textarea').length).toEqual(1);
   expect(wrapped.find('button').length).toEqual(1);
+});
+
+it('has a text area that users can type in', () => {
+
+  // {target: { value: 'new comment' }} - fake event we are passing / merging to the event object handleChange 
+  // in CommentBox recieves
+
+  wrapped.find('textarea').simulate('change', {
+    target: { value: 'new comment' }
+  });
+
 });
