@@ -30,6 +30,20 @@ it('has a text area that users can type in', () => {
   });
   wrapped.update();
 
+  //we want to check that the 'value' prop recieves the correct string, not the textarea value
   expect(wrapped.find('textarea').prop('value')).toEqual('new comment');
 
+});
+
+it('when form is submitted, text area gets emptied', () => {
+  wrapped.find('textarea').simulate('change', {
+    target: { value: 'new comment' }
+  });
+  wrapped.update();
+
+  //simulate calling handleSubmit on CommentBox - which empties the text area
+  wrapped.find('form').simulate('submit');
+  wrapped.update();
+  //expect it to be an empty string
+  expect(wrapped.find('textarea').prop('value')).toEqual('');
 });
