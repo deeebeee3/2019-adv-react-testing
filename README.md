@@ -76,7 +76,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 3. Enzyme:
 - static rendering (just plain HTML)
-- shallow rendering (render just the given react component and none of it's children (will render other non-react HTML))
-- Full DOM rendering (render the component and all of it's children + let us modify it afterwards)
+- shallow rendering {shallow} (render just the given react component and none of it's children (will render other non-react HTML))
+- Full DOM rendering {mount} (render the component and all of it's children + let us modify it afterwards)
 
 4. https://facebook.github.io/create-react-app/docs/importing-a-component#absolute-imports
+
+5. Enzyme Full DOM rendering is sharing the same fake DOM that has been implemented by that JSDOM library - this can cause issues across tests - so need to make sure we do appropriate clean up and unmount our components that got mounted to the virtual DOM.
