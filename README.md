@@ -82,3 +82,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 4. https://facebook.github.io/create-react-app/docs/importing-a-component#absolute-imports
 
 5. Enzyme Full DOM rendering is sharing the same fake DOM that has been implemented by that JSDOM library - this can cause issues across tests - so need to make sure we do appropriate clean up and unmount our components that got mounted to the virtual DOM.
+
+6. setState doesn't happen immediately - it is asynchronous - all setState calls get queued up and react decides when to invoke them - so when testing we need to force our component to update - luckily we can do this with enzyme with .update()
+
