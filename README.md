@@ -74,3 +74,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 2. Create setupTests.js file - file name is important - Jest looks for it when it starts up and executes it before any other code inside the project gets loaded - good place for initial configuration setup
 
+3. Enzyme:
+- static rendering (just plain HTML)
+- shallow rendering (render just the given react component and none of it's children (will render other non-react HTML))
+- Full DOM rendering (render the component and all of it's children + let us modify it afterwards)
+
