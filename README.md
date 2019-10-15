@@ -66,3 +66,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+-----------
+
+1. npm install --save enzyme enzyme-adapter-react-16 (find version of react in package.json - in this case it's 16)...
+
+2. Create setupTests.js file - file name is important - Jest looks for it when it starts up and executes it before any other code inside the project gets loaded - good place for initial configuration setup
+
