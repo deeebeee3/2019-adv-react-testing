@@ -10,11 +10,12 @@ import { createStore } from 'redux';
 import reducers from 'reducers';
 
 //export functional react component
-export default (props) => {
+//destructure children and initialState from props / give initialState a default value
+export default ({ children, initialState = {} }) => {
   return (
     //reducers and some initial state (an empty object)
-    <Provider store={createStore(reducers, {})}>
-      {props.children}
+    <Provider store={createStore(reducers, initialState)}>
+      {children}
     </Provider>
   );
 }
