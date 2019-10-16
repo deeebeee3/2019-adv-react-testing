@@ -1,21 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-//communicates directly with every connect function
-//we create inside our app - they work together to give our components
-//direct access to the redux store
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-
-//combine reducers call
-import reducers from 'reducers';
-
+import Root from 'Root';
 import App from 'components/App';
 
+//Root will recieve App Component on the props property of props.children
 ReactDOM.render(
-  //reducers and some initial state (an empty object)
-  <Provider store={createStore(reducers, {})}>
+  <Root>
     <App />
-  </Provider>,
+  </Root>,
   document.querySelector('#root')
 );
