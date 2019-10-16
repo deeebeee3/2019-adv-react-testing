@@ -85,3 +85,24 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 6. setState doesn't happen immediately - it is asynchronous - all setState calls get queued up and react decides when to invoke them - so when testing we need to force our component to update - luckily we can do this with enzyme with .update()
 
+7. Difference between Redux Thunk and Redux Promise:
+
+redux-thunk allows your action creators to return a function :
+
+function myAction(payload){
+    return () => {
+        // use dispatch as you please
+    }
+}
+
+-----------
+
+redux-promise allows them to return a promise :
+
+function myAction(payload){
+    return new Promise((resolve, reject) => {
+        resolve(someData); // redux-promise will dispatch someData
+    });
+}
+
+-----------
