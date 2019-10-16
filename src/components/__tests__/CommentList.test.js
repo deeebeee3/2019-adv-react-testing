@@ -18,5 +18,15 @@ beforeEach(() => {
 });
 
 it('creates one LI per comment', () => {
-  console.log(wrapped.find('li').length);
+  expect(wrapped.find('li').length).toEqual(3);
+});
+
+it('shows the text for each comment', () => {
+  //render() will return a Cheerio wrapper
+  //console.log(wrapped.render().text());
+
+  expect(wrapped.render().text()).toContain('Comment 1');
+  expect(wrapped.render().text()).toContain('Comment 2');
+  expect(wrapped.render().text()).toContain('Comment 3');
+
 });
