@@ -20,9 +20,9 @@ afterEach(() => {
   wrapped.unmount();
 });
 
-it('has a text area and a buttton', () => {
+it('has a text area and two butttons', () => {
   expect(wrapped.find('textarea').length).toEqual(1);
-  expect(wrapped.find('button').length).toEqual(1);
+  expect(wrapped.find('button').length).toEqual(2);
 });
 
 describe('the text area', () => {
