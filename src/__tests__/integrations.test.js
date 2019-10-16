@@ -2,6 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Root from 'Root';
 import App from 'components/App';
+import { exportAllDeclaration } from '@babel/types';
 
 it('can fetch a list of comments and display them', () => {
   //Attempt to render the *entire* app
@@ -12,6 +13,9 @@ it('can fetch a list of comments and display them', () => {
   );
 
   //find the 'fetchComments' button and click it
+  wrapped.find('.fetch-comments').simulate('click');
 
   //Expect to find a list of comments!
+  expect(wrapped.find('li').length).toEqual(500);
+
 });
