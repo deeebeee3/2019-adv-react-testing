@@ -32,14 +32,14 @@ it('can fetch a list of comments and display them', (done) => {
   wrapped.find('.fetch-comments').simulate('click');
 
   //introduce a TINY little pause - to allow moxios to kick in and do it's stuff before calling our expect
-  setTimeout(() => {
+  moxios.wait(() => {
     wrapped.update();
 
     expect(wrapped.find('li').length).toEqual(3);
 
     done();
     wrapped.unmount();
-  }, 100);
+  });
 
   //Expect to find a list of comments!
   //expect(wrapped.find('li').length).toEqual(3); // three comments
